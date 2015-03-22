@@ -28,7 +28,38 @@
 
   <div id="app"></div>
   <script type="text/x-handlebars">
-   <h1> Hello Ember.js! </h1>
+    <header class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="\" class="navbar-brand">Grocery Shoppr</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="md-col-12">
+
+          <h1>Categories</h1>
+
+          <form class="add-new">
+            <div class="input-group">
+              <input type="text" class="form-control">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">&plus;</button>
+              </span>
+            </div>
+          </form>
+
+            <ul class="list-group">
+              <li class="list-group-item">All</li>
+              <li class="list-group-item">Produce</li>
+              <li class="list-group-item">Baking</li>
+              <li class="list-group-item">Hiousehold Items</li>
+            </ul>
+        </div>
+      </div>
+    </div>
   </script>
 
 
