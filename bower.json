@@ -1,9 +1,9 @@
 {
-  "name": "test-app",
+  "name": "ember_intro",
   "private": true,
   "dependencies": {
-    "bootstrap": "~3.2.0",
+    "bootstrap-sass-official": "~3.2.0",
     "modernizr": "~2.8.2",
-    "ember": "~1.10.0"
-  }
+    "ember": "~1.8.0"
+  },
 }

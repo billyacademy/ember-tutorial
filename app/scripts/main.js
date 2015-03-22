@@ -1,3 +1,3 @@
-App = Ember.Application.create({
+App = Em.Application.create({
   rootElement: $('#app')
 });
