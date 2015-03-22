@@ -1,1 +1,3 @@
-console.log('\'Allo \'Allo!');
+App = Ember.Application.create({
+  rootElement: $('#app')
+});
