@@ -9,3 +9,13 @@ App.IndexRoute = Ember.Route.extend({
     return this.store.find('category');
   }
 });
+
+App.CategoryRoute = Ember.Route.extend({
+  model: function(params){
+    return this.store.find('category',  params.id)
+  }
+});
+
+App.Router.map(function(){
+  this.resource('category', {path: ':id'})
+});

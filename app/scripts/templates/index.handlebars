@@ -12,6 +12,8 @@
 <ul class="list-group">
   <li class="list-group-item">All</li>
   {{#each}}
-  <li class="list-group-item">{{title}}</li>
+    <li class="list-group-item">
+      {{#link-to 'category' id}}{{title}}{{/link-to}}
+    </li>
   {{/each}}
 </ul>
