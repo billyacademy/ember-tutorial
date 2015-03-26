@@ -4,6 +4,10 @@ App = Em.Application.create({
 
 App.ApplicationAdapter = DS.FixtureAdapter;
 
+App.Router.map(function(){
+  this.resource('category', {path: ':id'});
+});
+
 App.IndexRoute = Ember.Route.extend({
   model: function(){
     return this.store.find('category');
@@ -12,10 +16,26 @@ App.IndexRoute = Ember.Route.extend({
 
 App.CategoryRoute = Ember.Route.extend({
   model: function(params){
-    return this.store.find('category',  params.id)
+    return this.store.find('category', params.id)
   }
 });
 
-App.Router.map(function(){
-  this.resource('category', {path: ':id'})
+App.CategoryController = Ember.ObjectController.extend({
+  actions: {
+    createNewItem: function() {
+      var item = this.get('newItem');
+      var  category_id = this.model.id
+
+      var item = this.store.createRecord('item', {
+        name: item
+      });
+
+      this.store.find('category', category_id).then(function(category){
+        item.set('category', category);
+        category.get('items').pushObject(item);
+        item.save();
+      });
+      this.set('newItem', "");
+    }
+  }
 });
